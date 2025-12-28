@@ -132,8 +132,9 @@ GameObject:
   - component: {fileID: 285917858}
   - component: {fileID: 285917857}
   - component: {fileID: 285917861}
+  - component: {fileID: 285917862}
   m_Layer: 0
-  m_Name: character
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,6 +322,21 @@ MonoBehaviour:
   collidersToIgnore:
   - {fileID: 494404159}
   - {fileID: 494404156}
+--- !u!114 &285917862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285917856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dc1b56ab868c9ca82f6a9d506b929b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NetworkPlayer
+  rigidbody3D: {fileID: 285917859}
+  mainJoint: {fileID: 285917858}
+  maximumSpeed: 5
 --- !u!1 &352599898 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8184767776254516497, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
@@ -1591,7 +1607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596708098}
   m_Layer: 0
-  m_Name: model
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
