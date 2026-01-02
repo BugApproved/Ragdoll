@@ -214,6 +214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HumanBody Animated
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1498458548814100223, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       propertyPath: m_IsActive
       value: 1
