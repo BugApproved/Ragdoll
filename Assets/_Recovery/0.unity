@@ -198,14 +198,42 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -3954230636962443380, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1492176460129268699, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 131102264562332032, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       propertyPath: m_Name
       value: HumanBody Animated
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498458548814100223, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3175579088319373169, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6d18c6073b30fc72896041caa9cee3ce, type: 2}
+    - target: {fileID: 5958951237514315523, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184767776254516497, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8417361359673230750, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
