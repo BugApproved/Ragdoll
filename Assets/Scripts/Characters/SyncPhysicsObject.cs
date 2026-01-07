@@ -19,13 +19,14 @@ public class SyncPhysicsObject : MonoBehaviour
     {
         rigidbody3D = GetComponent<Rigidbody>();
         joint = GetComponent<ConfigurableJoint>();
-        startLocalRotation = joint.transform.localRotation;
+        startLocalRotation = transform.localRotation;
     }
 
     public void UpdateJointFromAnimation()
     {
         if (!syncAnimation)
         return;
+        
         ConfigurableJointExtensions.SetTargetRotationLocal(joint, animatedRigidbody3D.transform.localRotation, startLocalRotation);
     }
 }
