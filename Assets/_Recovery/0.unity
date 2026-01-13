@@ -575,8 +575,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IgnoreCollision
   thisCollider: {fileID: 285917857}
   collidersToIgnore:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2105788399}
+  - {fileID: 1412982620}
 --- !u!114 &285917862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,6 +914,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
   m_PrefabInstance: {fileID: 494404151}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &544508045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544508047}
+  - component: {fileID: 544508046}
+  m_Layer: 0
+  m_Name: Network Runner Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &544508046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544508045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8552166bcad7aea64979a67edfb55174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NetworkRunnerHandler
+  networkRunnerPrefab: {fileID: 2547666399836583133, guid: 6976503bdba33bb2ab6a940ce568d70a, type: 3}
+--- !u!4 &544508047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544508045}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676230751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1492176460129268699, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
@@ -2672,3 +2717,4 @@ SceneRoots:
   - {fileID: 285917860}
   - {fileID: 2070317669}
   - {fileID: 902215193}
+  - {fileID: 544508047}
