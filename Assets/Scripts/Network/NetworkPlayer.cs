@@ -100,7 +100,7 @@ public class NetworkPlayer : MonoBehaviour
             isJumpButtonPressed = false;
         }
 
-        // animator.SetFloat("movementSpeed", localForwardVelocity * 0.4f);
+        animator.SetFloat("movementSpeed", localForwardVelocity * 0.4f);
 
         for (int i = 0; i < syncPhysicsObjects.Length; i++)
         {

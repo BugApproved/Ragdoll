@@ -676,6 +676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NetworkPlayer
   rigidbody3D: {fileID: 285917859}
   mainJoint: {fileID: 285917858}
+  animator: {fileID: 836190116}
 --- !u!1 &503550350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6949849370105495462, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
@@ -1270,6 +1271,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &836190116 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+  m_PrefabInstance: {fileID: 538831296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &902215187
 GameObject:
   m_ObjectHideFlags: 0
