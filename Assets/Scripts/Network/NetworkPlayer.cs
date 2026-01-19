@@ -3,35 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class NetworkPlayer : MonoBehaviour
 {
-  [SerializeField]
-  Rigidbody rigidbody3D;
-  [SerializeField]
-ConfigurableJoint mainJoint;
+    [SerializeField]
+    Rigidbody rigidbody3D;
 
-[SerializeField]
-Animator animator;
- Vector2 moveInputVector = Vector2.zero;
- bool isJumpButtonPressed = false;
+    [SerializeField]
+    ConfigurableJoint mainJoint;
 
- float maxSpeed = 3;
+    // [SerializeField]
+    // Animator animator;
 
- bool isGrounded = false;
+    Vector2 moveInputVector = Vector2.zero;
+    bool isJumpButtonPressed = false;
 
- RaycastHit[] raycastHits = new RaycastHit[10];
+    float maxSpeed = 3;
 
+    bool isGrounded = false;
 
-SyncPhysicsObject[] syncPhysicsObjects;
+    RaycastHit[] raycastHits = new RaycastHit[10];
+
+    SyncPhysicsObject[] syncPhysicsObjects;
 
     void Awake()
     {
         syncPhysicsObjects = GetComponentsInChildren<SyncPhysicsObject>();
     }
+
     void Start()
     {
-        
     }
 
     void Update()
@@ -41,57 +41,69 @@ SyncPhysicsObject[] syncPhysicsObjects;
 
         if (Input.GetKeyDown(KeyCode.Space))
             isJumpButtonPressed = true;
-
-        
     }
 
-void FixedUpdate()
-{
-    isGrounded = false;
-    int numberofHits = Physics.SphereCastNonAlloc(rigidbody3D.position, 0.1f, transform.up * -1, raycastHits, 0.5f);
-
-    for (int i = 0; i < numberofHits; i++)
+    void FixedUpdate()
     {
-        if (raycastHits[i].transform.root == transform)
-            continue;
-        isGrounded = true;
-        break;
-    }
+        isGrounded = false;
+        int numberofHits = Physics.SphereCastNonAlloc(
+            rigidbody3D.position,
+            0.1f,
+            transform.up * -1,
+            raycastHits,
+            0.5f
+        );
 
-    if (!isGrounded)
-        rigidbody3D.AddForce(Vector3.down * 10);
-
-    // MOVED THIS OUTSIDE - Calculate velocity ALWAYS, not just when moving
-    Vector3 localVelocifyVsForward = transform.forward * Vector3.Dot(transform.forward, rigidbody3D.linearVelocity);
-    float localForwardVelocity = localVelocifyVsForward.magnitude;
-
-    float inputMagnitued = moveInputVector.magnitude;
-
-    if (inputMagnitued != 0)
-    {
-        Quaternion desiredRotation = Quaternion.LookRotation(new Vector3(moveInputVector.x, 0, moveInputVector.y * -1), transform.up); 
-
-        mainJoint.targetRotation = Quaternion.RotateTowards(mainJoint.targetRotation, desiredRotation, Time.fixedDeltaTime * 300);
-
-        if (localForwardVelocity < maxSpeed)
+        for (int i = 0; i < numberofHits; i++)
         {
-            rigidbody3D.AddForce(transform.forward * inputMagnitued * 30);
+            if (raycastHits[i].transform.root == transform)
+                continue;
+
+            isGrounded = true;
+            break;
+        }
+
+        if (!isGrounded)
+            rigidbody3D.AddForce(Vector3.down * 10);
+
+        Vector3 localVelocifyVsForward =
+            transform.forward *
+            Vector3.Dot(transform.forward, rigidbody3D.linearVelocity);
+
+        float localForwardVelocity = localVelocifyVsForward.magnitude;
+
+        float inputMagnitued = moveInputVector.magnitude;
+
+        if (inputMagnitued != 0)
+        {
+            Quaternion desiredRotation = Quaternion.LookRotation(
+                new Vector3(moveInputVector.x, 0, moveInputVector.y * -1),
+                transform.up
+            );
+
+            mainJoint.targetRotation = Quaternion.RotateTowards(
+                mainJoint.targetRotation,
+                desiredRotation,
+                Time.fixedDeltaTime * 300
+            );
+
+            if (localForwardVelocity < maxSpeed)
+            {
+                rigidbody3D.AddForce(transform.forward * inputMagnitued * 30);
+            }
+        }
+
+        if (isGrounded && isJumpButtonPressed)
+        {
+            rigidbody3D.AddForce(Vector3.up * 20, ForceMode.Impulse);
+            isJumpButtonPressed = false;
+        }
+
+        // animator.SetFloat("movementSpeed", localForwardVelocity * 0.4f);
+
+        for (int i = 0; i < syncPhysicsObjects.Length; i++)
+        {
+            syncPhysicsObjects[i].UpdateJointFromAnimation();
         }
     }
-    
-    if (isGrounded && isJumpButtonPressed)
-    {
-        rigidbody3D.AddForce(Vector3.up * 20, ForceMode.Impulse);
-        isJumpButtonPressed = false;
-    }
-
-    // ADD THIS LINE - Update animator with movement speed
-    animator.SetFloat("movementSpeed", localForwardVelocity * 0.4f);
-
-    // Sync physics objects
-    for (int i = 0; i < syncPhysicsObjects.Length; i++)
-    {
-        syncPhysicsObjects[i].UpdateJointFromAnimation();
-    }
-}
 }
