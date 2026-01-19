@@ -11,8 +11,8 @@ public class NetworkPlayer : MonoBehaviour
     [SerializeField]
     ConfigurableJoint mainJoint;
 
-    // [SerializeField]
-    // Animator animator;
+    [SerializeField]
+    Animator animator;
 
     Vector2 moveInputVector = Vector2.zero;
     bool isJumpButtonPressed = false;
@@ -66,13 +66,14 @@ public class NetworkPlayer : MonoBehaviour
         if (!isGrounded)
             rigidbody3D.AddForce(Vector3.down * 10);
 
-        Vector3 localVelocifyVsForward =
+
+        float inputMagnitued = moveInputVector.magnitude;
+
+                Vector3 localVelocifyVsForward =
             transform.forward *
             Vector3.Dot(transform.forward, rigidbody3D.linearVelocity);
 
         float localForwardVelocity = localVelocifyVsForward.magnitude;
-
-        float inputMagnitued = moveInputVector.magnitude;
 
         if (inputMagnitued != 0)
         {

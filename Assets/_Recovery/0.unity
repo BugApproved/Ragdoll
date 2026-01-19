@@ -274,6 +274,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &167106508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167106502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b64ba9dec95505be821e7d6ea69ffdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SyncPhysicsObject
+  animatedRigidbody3D: {fileID: 2138381582}
+  syncAnimation: 0
 --- !u!1 &199313978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7756573384131056343, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
@@ -431,6 +445,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &199313983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199313978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b64ba9dec95505be821e7d6ea69ffdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SyncPhysicsObject
+  animatedRigidbody3D: {fileID: 1982374906}
+  syncAnimation: 1
 --- !u!1 &285917856
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +833,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &503550355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503550350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b64ba9dec95505be821e7d6ea69ffdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SyncPhysicsObject
+  animatedRigidbody3D: {fileID: 1433177441}
+  syncAnimation: 1
 --- !u!1001 &538831296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -865,6 +907,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f9f8aaa07b573ecb9a20195bc7fad600, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -1183,6 +1229,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &766275537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766275532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b64ba9dec95505be821e7d6ea69ffdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SyncPhysicsObject
+  animatedRigidbody3D: {fileID: 538831309}
+  syncAnimation: 0
 --- !u!54 &820617530
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1920,7 +1980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: -0.213
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1972,6 +2032,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7756573384131056343, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 199313980}
+    - targetCorrespondingSourceObject: {fileID: 7756573384131056343, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 199313983}
     - targetCorrespondingSourceObject: {fileID: 6949849370105495462, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 503550354}
@@ -1981,6 +2044,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6949849370105495462, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 503550352}
+    - targetCorrespondingSourceObject: {fileID: 6949849370105495462, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 503550355}
     - targetCorrespondingSourceObject: {fileID: 3175579088319373169, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2031547865}
@@ -1990,6 +2056,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3175579088319373169, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2031547866}
+    - targetCorrespondingSourceObject: {fileID: 3175579088319373169, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2031547868}
     - targetCorrespondingSourceObject: {fileID: -1492176460129268699, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 167106505}
@@ -1999,6 +2068,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -1492176460129268699, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 167106506}
+    - targetCorrespondingSourceObject: {fileID: -1492176460129268699, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 167106508}
     - targetCorrespondingSourceObject: {fileID: 8184767776254516497, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1794042139}
@@ -2008,6 +2080,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8184767776254516497, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1794042140}
+    - targetCorrespondingSourceObject: {fileID: 8184767776254516497, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1794042141}
     - targetCorrespondingSourceObject: {fileID: -3954230636962443380, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 766275534}
@@ -2017,6 +2092,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -3954230636962443380, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 766275536}
+    - targetCorrespondingSourceObject: {fileID: -3954230636962443380, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 766275537}
   m_SourcePrefab: {fileID: 100100000, guid: 57f7992edbe9d4aa29cca402974a32ae, type: 3}
 --- !u!4 &1631732401 stripped
 Transform:
@@ -2180,6 +2258,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1794042141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794042136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b64ba9dec95505be821e7d6ea69ffdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SyncPhysicsObject
+  animatedRigidbody3D: {fileID: 820617530}
+  syncAnimation: 0
 --- !u!54 &1982374906
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2364,6 +2456,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2031547868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031547862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b64ba9dec95505be821e7d6ea69ffdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SyncPhysicsObject
+  animatedRigidbody3D: {fileID: 538831304}
+  syncAnimation: 0
 --- !u!1 &2039869898
 GameObject:
   m_ObjectHideFlags: 0
