@@ -1,10 +1,13 @@
+using Fusion;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NetworkPlayer : MonoBehaviour
+public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
 {
+    public static NetworkPlayer Local { get; set; }
+    
     [SerializeField]
     Rigidbody rigidbody3D;
 
@@ -106,5 +109,18 @@ public class NetworkPlayer : MonoBehaviour
         {
             syncPhysicsObjects[i].UpdateJointFromAnimation();
         }
+    }
+
+    public override void Spawned()
+    {
+        if (Object.HasInputAuthority)
+        {
+        Local = this;
+        }
+    }
+
+    public void PlayerLeft(PlayerRef player)
+    {
+ 
     }
 }
