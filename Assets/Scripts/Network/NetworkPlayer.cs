@@ -52,6 +52,9 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
 
     public override void FixedUpdateNetwork()
     {
+        Vector3 localVelocifyVsForward = Vector3.zero;
+        float localForwardVelocity = 0;
+
         if (Object.HasStateAuthority)
         {
                     isGrounded = false;
@@ -73,17 +76,21 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
         }
          if (!isGrounded)
             rigidbody3D.AddForce(Vector3.down * 10);
+
+                localVelocifyVsForward =
+            transform.forward *
+            Vector3.Dot(transform.forward, rigidbody3D.linearVelocity);
+
+        localForwardVelocity = localVelocifyVsForward.magnitude;
+        animator.SetFloat("movementSpeed", localForwardVelocity * 0.4f);
+
         }
 
     if (GetInput(out NetworkInputData networkInputData))
         {
-            float inputMagnitued = networkInputData.movement.magnitude;
+            float inputMagnitued = networkInputData.movementInput.magnitude;
 
-                Vector3 localVelocifyVsForward =
-            transform.forward *
-            Vector3.Dot(transform.forward, rigidbody3D.linearVelocity);
-
-        float localForwardVelocity = localVelocifyVsForward.magnitude;
+            
 
         if (inputMagnitued != 0)
         {
@@ -94,7 +101,7 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
             mainJoint.targetRotation = Quaternion.RotateTowards(
                 mainJoint.targetRotation,
                 desiredRotation,
-                Time.fixedDeltaTime * 300
+                Runner.DeltaTime * 300
             );
 
             if (localForwardVelocity < maxSpeed)
@@ -113,13 +120,16 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
        
 
 
-        
-        animator.SetFloat("movementSpeed", localForwardVelocity * 0.4f);
+        if (Object.HasInputAuthority)
+        {
+             animator.SetFloat("movementSpeed", localForwardVelocity * 0.4f);
 
         for (int i = 0; i < syncPhysicsObjects.Length; i++)
         {
             syncPhysicsObjects[i].UpdateJointFromAnimation();
         }
+        }
+       
     }
 
     public NetworkInputData GetNetworkInput()
